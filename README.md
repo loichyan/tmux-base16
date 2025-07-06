@@ -2,6 +2,18 @@
 
 A minimal and clean [Base16](https://github.com/chriskempson/base16) colorscheme for tmux.
 
+![showcase](https://github.com/user-attachments/assets/18deae4b-9ba2-4c03-83de-cc31b65e7cf0)
+
+<details>
+<summary>Information</summary>
+<br>
+
+- font: [Rec Mono Duotone](https://www.recursive.design)
+- tmux: [tmux-base16](https://github.com/loichyan/tmux-base16)
+- Neovim: [Meowim](https://github.com/loichyan/Meowim)
+
+</details>
+
 ## 📦 Installation
 
 ### Requirements
