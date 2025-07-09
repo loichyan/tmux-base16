@@ -2,13 +2,12 @@
 
 A minimal and clean [Base16](https://github.com/chriskempson/base16) colorscheme for tmux.
 
-![showcase](https://github.com/user-attachments/assets/18deae4b-9ba2-4c03-83de-cc31b65e7cf0)
+[![showcase](https://github.com/user-attachments/assets/18deae4b-9ba2-4c03-83de-cc31b65e7cf0)](https://github.com/loichyan/dotfiles)
 
 <details>
 <summary>Information</summary>
-<br>
 
-- font: [Rec Mono Duotone](https://www.recursive.design)
+- font: [0xProto](https://github.com/0xType/0xProto)
 - tmux: [tmux-base16](https://github.com/loichyan/tmux-base16)
 - Neovim: [Meowim](https://github.com/loichyan/Meowim)
 
@@ -89,7 +88,7 @@ This option is expanded as a FORMAT before it takes effect. Therefore, you can u
 ## ⌨️ Commands
 
 Commands are shell scripts exported by this plugin, which you can bind keys to. The basic usage is
-`tmux bind-key run-shell '#{@command_name} ...args'`.
+`tmux bind-key <key> run-shell '#{@command_name} ...<args>'`.
 
 ### `@base16-toggle-background`
 
