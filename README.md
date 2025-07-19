@@ -57,7 +57,7 @@ This option is expanded as a FORMAT before it takes effect. Therefore, you can u
 
 ### `@base16-palette-light`
 
-**Default**: `#{@base16-palette-light}/gruvbox-light.conf`
+**Default**: `#{@base16-palettes}/gruvbox-light.conf`
 
 **Description**: Path to the base16 palette for light backgrounds.
 
