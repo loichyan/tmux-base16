@@ -85,6 +85,12 @@ This option is expanded as a FORMAT before it takes effect. Therefore, you can u
 
 **Description**: Whether to configure tmux's statusline.
 
+### `@base16-window-{content,current_content}`
+
+**Default**: `#{window_name}#{window_flags}`
+
+**Description**: Content displayed in window tabs when `@base16-statusline` is enabled.
+
 ## ⌨️ Commands
 
 Commands are shell scripts exported by this plugin, which you can bind keys to. The basic usage is
