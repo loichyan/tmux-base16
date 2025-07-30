@@ -46,26 +46,23 @@ plugin.
 
 ## ⚙️ Options
 
-### `@base16-palette-dark`
+### `@base16-palette-path`
 
-**Default**: `#{@base16-palettes}/gruvbox-dark.conf`
+**Default**: `#{@base16-palettes}/gruvbox.conf`
 
-**Description**: Path to the base16 palette for dark backgrounds.
+**Description**: Path to the base16 palette.
 
 This option is expanded as a FORMAT before it takes effect. Therefore, you can use palettes under
 `@base16-palettes`, which is set to the [palettes directory](palettes) included in this plugin.
-
-### `@base16-palette-light`
-
-**Default**: `#{@base16-palettes}/gruvbox-light.conf`
-
-**Description**: Path to the base16 palette for light backgrounds.
 
 ### `@base16-background`
 
 **Default**: `dark`
 
 **Description**: Which background to use, `dark` or `light`.
+
+This option itself does not affect the appearance; instead, palette should be responsible for it
+value.
 
 ### `@base16-border-lines`
 
@@ -93,8 +90,7 @@ This option is expanded as a FORMAT before it takes effect. Therefore, you can u
 
 ## ⌨️ Commands
 
-Commands are shell scripts exported by this plugin, which you can bind keys to. The basic usage is
-`tmux bind-key <key> run-shell '#{@command_name} ...<args>'`.
+A command is an executable shell script exported by this plugin, which you can bind keys to.
 
 ### `@base16-toggle-background`
 
