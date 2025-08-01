@@ -3,43 +3,113 @@
 # pyright: reportUnusedCallResult=false
 
 import argparse
-import colorsys
+import math
 from configparser import ConfigParser, SectionProxy
 
 
-def hex2rgb(hex: str) -> tuple[int, int, int]:
-    if len(hex) == 3:
-        hex = "".join(map(lambda c: c + c, list(hex)))
-
-    i = int(hex, 16)
-    r = (i >> 16) & 0xFF
-    g = (i >> 8) & 0xFF
-    b = (i >> 0) & 0xFF
-
-    return r, g, b
+def cbrt(i: float) -> float:
+    return math.pow(i, 1 / 3)
 
 
-def rgb2hex(r: int, g: int, b: int) -> str:
-    return f"{r:02x}{g:02x}{b:02x}"
+# Ported from <https://github.com/Qix-/color-convert/blob/07e073af02e9a3722f6926d214ffd778af20ab03/conversions.js>
+class ColorConvert:
+    @staticmethod
+    def srgb_nonlinear_transform(c: float) -> float:
+        c = ((1.055 * (c ** (1 / 2.4))) - 0.055) if c > 0.003_130_8 else (c * 12.92)
+        return min(max(0, c), 1)
+
+    @staticmethod
+    def srgb_nonlinear_transform_invert(c: float) -> float:
+        return (((c + 0.055) / 1.055) ** 2.4) if c > 0.040_45 else (c / 12.92)
+
+    @staticmethod
+    def lab_ft(c: float) -> float:
+        return (c ** (1 / 3)) if c > ((6 / 29) ** 3) else ((7.787 * c) + (16 / 116))
+
+    @staticmethod
+    def rgb2oklab(r: float, g: float, b: float) -> tuple[float, float, float]:
+        # Assume sRGB
+        r = ColorConvert.srgb_nonlinear_transform_invert(r / 255)
+        g = ColorConvert.srgb_nonlinear_transform_invert(g / 255)
+        b = ColorConvert.srgb_nonlinear_transform_invert(b / 255)
+
+        lp = cbrt(0.412_221_470_8 * r + 0.536_332_536_3 * g + 0.051_445_992_9 * b)
+        mp = cbrt(0.211_903_498_2 * r + 0.680_699_545_1 * g + 0.107_396_956_6 * b)
+        sp = cbrt(0.088_302_461_9 * r + 0.281_718_837_6 * g + 0.629_978_700_5 * b)
+
+        l = 0.210_454_255_3 * lp + 0.793_617_785 * mp - 0.004_072_046_8 * sp
+        a = 1.977_998_495_1 * lp - 2.428_592_205 * mp + 0.450_593_709_9 * sp
+        b = 0.025_904_037_1 * lp + 0.782_771_766_2 * mp - 0.808_675_766 * sp
+        return l * 100, a * 100, b * 100
+
+    @staticmethod
+    def oklab2rgb(l: float, a: float, b: float) -> tuple[float, float, float]:
+        l = l / 100
+        a = a / 100
+        b = b / 100
+
+        lp = (l + 0.396_337_777_4 * a + 0.215_803_757_3 * b) ** 3
+        mp = (l - 0.105_561_345_8 * a - 0.063_854_172_8 * b) ** 3
+        sp = (l - 0.089_484_177_5 * a - 1.291_485_548 * b) ** 3
+
+        r = (4.076_741_662_1 * lp) - (3.307_711_591_3 * mp) + (0.230_969_929_2 * sp)
+        g = (-1.268_438_004_6 * lp) + (2.609_757_401_1 * mp) - (0.341_319_396_5 * sp)
+        b = (-0.004_196_086_3 * lp) - (0.703_418_614_7 * mp) + (1.707_614_701 * sp)
+
+        # Assume sRGB
+        r = ColorConvert.srgb_nonlinear_transform(r)
+        g = ColorConvert.srgb_nonlinear_transform(g)
+        b = ColorConvert.srgb_nonlinear_transform(b)
+
+        return r * 255, g * 255, b * 255
+
+    @staticmethod
+    def hex2rgb(hex: str) -> tuple[float, float, float]:
+        if len(hex) == 3:
+            hex = "".join(map(lambda c: c + c, list(hex)))
+
+        i = int(hex, 16)
+        r = (i >> 16) & 0xFF
+        g = (i >> 8) & 0xFF
+        b = (i >> 0) & 0xFF
+
+        return float(r), float(g), float(b)
+
+    @staticmethod
+    def rgb2hex(r: float, g: float, b: float) -> str:
+        return f"{round(r):02x}{round(g):02x}{round(b):02x}"
 
 
-def brighten(hex: str, *, delta: float = 0, percentage: float = 0) -> str:
-    r, g, b = hex2rgb(hex)
-    h, l, s = colorsys.rgb_to_hls(r, g, b)
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-i",
+        "--input",
+        metavar="<path>",
+        help="path to palette configuration",
+        required=True,
+    )
+    parser.add_argument(
+        "-o",
+        "--output",
+        metavar="<path>",
+        help="path to write generated palette",
+    )
+    return parser.parse_args()
 
-    l = l + delta
-    l = l + l * percentage / 100
 
-    r, g, b = colorsys.hls_to_rgb(h, l, s)
-    return rgb2hex(int(r), int(g), int(b))
+def brighten(hex: str, d: str) -> str:
+    r, g, b = ColorConvert.hex2rgb(hex.lstrip("#"))
+    l, a, b = ColorConvert.rgb2oklab(r, g, b)
 
-
-def parse_modification(s: str) -> tuple[float, float]:
-    p = s.rstrip("%")
-    if p == s:
-        return float(p), 0
+    p = d.rstrip("%")
+    if p == d:
+        l += float(p)
     else:
-        return 0, float(p)
+        l += l * float(p) / 100
+
+    r, g, b = ColorConvert.oklab2rgb(l, a, b)
+    return ColorConvert.rgb2hex(r, g, b)
 
 
 def to_palette_entry(key: str, val: str) -> str:
@@ -59,22 +129,23 @@ def build_palette_variant(config: SectionProxy):
         result += [f"# Author: {author}"]
 
     # Normal colors
+    result += ["# Normal colors"]
     for k in palette_keys:
         hex = config.get(k)
         assert hex is not None, f"palette for {k} is missing"
         hex = hex.lstrip("#")
         result += [f'set -g @{k} "#{hex}"']
 
-    # Bright colors
-    bright = config.get("bright")
-    if bright is not None:
-        d, p = parse_modification(bright)
-        result += [f"# Colors brithened by {bright}"]
+    for key, name in [("bright", "Bright"), ("dim", "Dim")]:
+        d = config.get(key)
+        if d is None:
+            continue
+        result += [f"# {name} colors with lightness {d}"]
         for k in palette_keys:
             hex = config.get(k)
             assert hex is not None, f"palette for {k} is missing"
             hex = hex.lstrip("#")
-            hex = brighten(hex, delta=d, percentage=p)
+            hex = brighten(hex, d)
             result += [f'set -g @{k}-bright "#{hex}"']
 
     return result
@@ -94,24 +165,6 @@ def build_palette(path: str) -> str:
     result += ["%endif"]
 
     return "\n".join(result)
-
-
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "-i",
-        "--input",
-        metavar="<path>",
-        help="path to palette configuration",
-        required=True,
-    )
-    parser.add_argument(
-        "-o",
-        "--output",
-        metavar="<path>",
-        help="path to write generated palette",
-    )
-    return parser.parse_args()
 
 
 def main():
