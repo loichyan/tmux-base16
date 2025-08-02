@@ -94,8 +94,15 @@ A command is an executable shell script exported by this plugin, which you can b
 
 ### `@base16-toggle-background`
 
-**Description**: Toggles the current background between `light` and `dark`. You may specify the
-desired background as its optional argument.
+**Description**: Toggles the current background between `light` and `dark`. You may explicitly
+specify the desired background as the only argument.
+
+### `@base16-build-palette`
+
+**Requirements**: Python >= **3.10**
+
+**Description**: A useful script to build palette from configurations. For the structure of the
+configurations, see [palettes/gruvbox.ini](palettes/gruvbox.ini).
 
 ## 🔤 Variables
 
