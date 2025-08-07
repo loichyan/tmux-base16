@@ -1,6 +1,7 @@
 # 🎨 tmux-base16
 
-A minimal and clean [Base16](https://github.com/chriskempson/base16) colorscheme for tmux.
+A minimal and clean [Base16](https://github.com/chriskempson/base16) colorscheme
+for tmux.
 
 [![showcase](https://github.com/user-attachments/assets/18deae4b-9ba2-4c03-83de-cc31b65e7cf0)](https://github.com/loichyan/dotfiles)
 
@@ -41,8 +42,8 @@ Add this line to the bottom of `.tmux.conf`:
 run ~/clone/path/base16.tmux
 ```
 
-Reload tmux environment with `tmux source-file ~/.tmux.conf`. You should now be able to use the
-plugin.
+Reload tmux environment with `tmux source-file ~/.tmux.conf`. You should now be
+able to use the plugin.
 
 ## ⚙️ Options
 
@@ -52,8 +53,9 @@ plugin.
 
 **Description**: Path to the base16 palette.
 
-This option is expanded as a FORMAT before it takes effect. Therefore, you can use palettes under
-`@base16-palettes`, which is set to the [palettes directory](palettes) included in this plugin.
+This option is expanded as a FORMAT before it takes effect. Therefore, you can
+use palettes under `@base16-palettes`, which is set to the
+[palettes directory](palettes) included in this plugin.
 
 ### `@base16-background`
 
@@ -61,8 +63,8 @@ This option is expanded as a FORMAT before it takes effect. Therefore, you can u
 
 **Description**: Which background to use, `dark` or `light`.
 
-This option itself does not affect the appearance; instead, palette should be responsible for it
-value.
+This option itself does not affect the appearance; instead, palette should be
+responsible for it value.
 
 ### `@base16-border-lines`
 
@@ -86,23 +88,26 @@ value.
 
 **Default**: `#{window_name}#{window_flags}`
 
-**Description**: Content displayed in window tabs when `@base16-statusline` is enabled.
+**Description**: Content displayed in window tabs when `@base16-statusline` is
+enabled.
 
 ## ⌨️ Commands
 
-A command is an executable shell script exported by this plugin, which you can bind keys to.
+A command is an executable shell script exported by this plugin, which you can
+bind keys to.
 
 ### `@base16-toggle-background`
 
-**Description**: Toggles the current background between `light` and `dark`. You may explicitly
-specify the desired background as the only argument.
+**Description**: Toggles the current background between `light` and `dark`. You
+may explicitly specify the desired background as the only argument.
 
 ### `@base16-build-palette`
 
 **Requirements**: Python >= **3.10**
 
-**Description**: A useful script to build palette from configurations. For the structure of the
-configurations, see [palettes/gruvbox.ini](palettes/gruvbox.ini).
+**Description**: A useful script to build palette from configurations. For the
+structure of the configurations, see
+[palettes/gruvbox.ini](palettes/gruvbox.ini).
 
 ## 🔤 Variables
 
@@ -110,18 +115,20 @@ This plugin also sets several variables that can be used in FORMATs.
 
 ### `@baseXX`
 
-From `@base00` to `@base0F` are sixteen palette variables loaded from the provided palette file.
+From `@base00` to `@base0F` are sixteen palette variables loaded from the
+provided palette file.
 
 ### `@base16_{fg,bg}`
 
-`@base16_fg` and `@base16_bg` represent the default foreground and background colors, respectively,
-depending on your configurations.
+`@base16_fg` and `@base16_bg` represent the default foreground and background
+colors, respectively, depending on your configurations.
 
 ## 🎯 Goals
 
-This plugin aims to provide a minimal theme that overrides tmux's default colors, so third-party
-integrations won't be included. Additionally, it comes with a opinionated statusline, but if it
-doesn’t suit your taste, you can create your own using the exported theme variables.
+This plugin aims to provide a minimal theme that overrides tmux's default
+colors, so third-party integrations won't be included. Additionally, it comes
+with a opinionated statusline, but if it doesn’t suit your taste, you can create
+your own using the exported theme variables.
 
 ## ⚖️ License
 
@@ -129,6 +136,7 @@ Licensed under either of
 
 - Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or
   <http://www.apache.org/licenses/LICENSE-2.0>)
-- MIT license ([LICENSE-MIT](LICENSE-MIT) or <http://opensource.org/licenses/MIT>)
+- MIT license ([LICENSE-MIT](LICENSE-MIT) or
+  <http://opensource.org/licenses/MIT>)
 
 at your option.
