@@ -49,7 +49,7 @@ able to use the plugin.
 
 ### `@base16-palette-path`
 
-**Default**: `#{@base16-palettes}/gruvbox-material.conf`
+**Default**: `#{@base16-palettes}/gruvbox-carbon.conf`
 
 **Description**: Path to the base16 palette.
 
@@ -107,7 +107,7 @@ may explicitly specify the desired background as the only argument.
 
 **Description**: A useful script to build palette from configurations. For the
 structure of the configurations, see
-[palettes/gruvbox-material.ini](palettes/gruvbox-material.ini).
+[palettes/gruvbox-carbon.ini](palettes/gruvbox-carbon.ini).
 
 ## 🔤 Variables
 
