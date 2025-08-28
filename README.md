@@ -3,16 +3,8 @@
 A minimal and clean [Base16](https://github.com/chriskempson/base16) colorscheme
 for tmux.
 
-[![showcase](https://github.com/user-attachments/assets/18deae4b-9ba2-4c03-83de-cc31b65e7cf0)](https://github.com/loichyan/dotfiles)
-
-<details>
-<summary>Information</summary>
-
-- font: [0xProto](https://github.com/0xType/0xProto)
-- tmux: [tmux-base16](https://github.com/loichyan/tmux-base16)
-- Neovim: [Meowim](https://github.com/loichyan/Meowim)
-
-</details>
+![showcase](https://github.com/loichyan/dotfiles/raw/snapshot/assets/showcase.jpg)
+[Information](https://github.com/loichyan/dotfiles/tree/snapshot#information)
 
 ## 📦 Installation
 
