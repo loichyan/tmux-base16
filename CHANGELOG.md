@@ -40,8 +40,8 @@ follows <https://www.conventionalcommits.org/en/v1.0.0/> to track changes.
 ## [0.1.0] - {{DATE}}
 
 🎉 Initial release. See
-[README](https://github.com/loichyan/tmux-toggle-popup/blob/v0.1.0/README.md)
-for more details.
+[README](https://github.com/loichyan/tmux-base16/blob/v0.1.0/README.md) for more
+details.
 
-[0.1.0]: https://github.com/loichyan/tmux-toggle-popup/releases/tag/v0.1.0
-[Unreleased]: https://github.com/loichyan/tmux-toggle-popup/compare/v0.1.0..HEAD
+[0.1.0]: https://github.com/loichyan/tmux-base16/releases/tag/v0.1.0
+[Unreleased]: https://github.com/loichyan/tmux-base16/compare/v0.1.0..HEAD
