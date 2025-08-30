@@ -47,7 +47,7 @@ jobs:
   # 4. Publish the release when it's ready.
   release:
     name: Create GitHub release
-    needs: [check, changelog]
+    needs: [changelog]
     if: startsWith(github.head_ref, 'release/') && github.repository == 'loichyan/tmux-base16'
     permissions:
       contents: write # need to update release
