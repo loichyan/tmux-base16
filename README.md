@@ -3,7 +3,7 @@
 A minimal and clean [Base16](https://github.com/chriskempson/base16) colorscheme
 for tmux.
 
-![showcase](https://github.com/loichyan/dotfiles/raw/snapshot/assets/showcase.jpg)
+![showcase](https://loichyan.github.io/dotfiles/assets/showcase.jpg)
 [Information](https://github.com/loichyan/dotfiles/tree/snapshot#information)
 
 ## 📦 Installation
