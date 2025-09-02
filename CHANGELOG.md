@@ -37,11 +37,16 @@ follows <https://www.conventionalcommits.org/en/v1.0.0/> to track changes.
 
 ## [Unreleased]
 
+### Added
+
+- Support overriding the content of the right side of the statusline ([#{{PRNUM}}])
+
 ### Changed
 
 - (**breaking**) Expand customized section content as tmux FORMATS ([#2])
 
 [#2]: https://github.com/loichyan/tmux-base16/pull/2
+[#{{PRNUM}}]: https://github.com/loichyan/tmux-base16/pull/{{PRNUM}}
 
 ## [0.1.0] - 2025-08-30
 
