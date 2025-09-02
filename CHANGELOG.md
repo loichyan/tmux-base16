@@ -44,9 +44,11 @@ follows <https://www.conventionalcommits.org/en/v1.0.0/> to track changes.
 ### Changed
 
 - (**breaking**) Expand customized section content as tmux FORMATS ([#2])
+- (**breaking**) Minimize the entire statusline ([#4])
 
 [#2]: https://github.com/loichyan/tmux-base16/pull/2
 [#3]: https://github.com/loichyan/tmux-base16/pull/3
+[#4]: https://github.com/loichyan/tmux-base16/pull/4
 
 ## [0.1.0] - 2025-08-30
 

@@ -78,14 +78,14 @@ responsible for it value.
 
 ### `@base16-window-{content,current_content}`
 
-**Default**: `##{window_name}##{window_flags}`
+**Default**: `##{window_name}##{window_flags}:##{pane_current_path}`
 
 **Description**: Content displayed in window tabs when `@base16-statusline` is
 enabled. The value is expanded as tmux FORMATS before taking effect.
 
 ### `@base16-status-right-content`
 
-**Default**: `%H:%M  %m-%d %Y`
+**Default**: `%a %H:%M`
 
 **Description**: Content displayed in the right side of the statusline. The
 value is expanded as tmux FORMATS before taking effect.
