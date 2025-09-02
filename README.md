@@ -78,10 +78,10 @@ responsible for it value.
 
 ### `@base16-window-{content,current_content}`
 
-**Default**: `#{window_name}#{window_flags}`
+**Default**: `##{window_name}##{window_flags}`
 
 **Description**: Content displayed in window tabs when `@base16-statusline` is
-enabled.
+enabled. The value is expanded as tmux FORMATS before taking effect.
 
 ## ⌨️ Commands
 
