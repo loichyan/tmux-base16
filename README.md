@@ -83,6 +83,13 @@ responsible for it value.
 **Description**: Content displayed in window tabs when `@base16-statusline` is
 enabled. The value is expanded as tmux FORMATS before taking effect.
 
+### `@base16-status-right-content`
+
+**Default**: `%H:%M  %m-%d %Y`
+
+**Description**: Content displayed in the right side of the statusline. The
+value is expanded as tmux FORMATS before taking effect.
+
 ## ⌨️ Commands
 
 A command is an executable shell script exported by this plugin, which you can
