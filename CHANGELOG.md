@@ -37,6 +37,8 @@ follows <https://www.conventionalcommits.org/en/v1.0.0/> to track changes.
 
 ## [Unreleased]
 
+## [0.2.0] - {{DATE}}
+
 ### Added
 
 - Support overriding the content of the right side of the statusline ([#3])
@@ -72,4 +74,5 @@ follows <https://www.conventionalcommits.org/en/v1.0.0/> to track changes.
 details.
 
 [0.1.0]: https://github.com/loichyan/tmux-base16/tree/v0.1.0
-[Unreleased]: https://github.com/loichyan/tmux-base16/compare/v0.1.0..HEAD
+[0.2.0]: https://github.com/loichyan/tmux-base16/compare/v0.1.0..v0.2.0
+[Unreleased]: https://github.com/loichyan/tmux-base16/compare/v0.2.0..HEAD
