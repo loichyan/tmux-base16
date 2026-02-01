@@ -37,7 +37,7 @@ follows <https://www.conventionalcommits.org/en/v1.0.0/> to track changes.
 
 ## [Unreleased]
 
-## [0.2.0] - {{DATE}}
+## [0.2.0] - 2026-02-01
 
 ### Added
 
