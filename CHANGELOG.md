@@ -40,15 +40,30 @@ follows <https://www.conventionalcommits.org/en/v1.0.0/> to track changes.
 ### Added
 
 - Support overriding the content of the right side of the statusline ([#3])
+- Show colored pane borders when in copy mode ([b1477fc])
+- Improve the color of selection area ([2eb2c5a])
 
 ### Changed
 
 - (**breaking**) Expand customized section content as tmux FORMATS ([#2])
 - (**breaking**) Minimize the entire statusline ([#4])
+- (**breaking**) Switch the default palette back to gruvbox-material ([6daad03])
+- Use a thinner mode indicator, from `█` to `┃` ([0fcaf01])
+- Use classic yellow copy mode indicator ([b8fd414])
+
+### Fixed
+
+- Suppress errors about unknown options ([c9ca977])
 
 [#2]: https://github.com/loichyan/tmux-base16/pull/2
 [#3]: https://github.com/loichyan/tmux-base16/pull/3
 [#4]: https://github.com/loichyan/tmux-base16/pull/4
+[0fcaf01]: https://github.com/loichyan/tmux-base16/commit/0fcaf01b00131787bbf27411471c4dcb8fbdef0a
+[b1477fc]: https://github.com/loichyan/tmux-base16/commit/b1477fcffc1542b575123176cb77b4a2349193e7
+[2eb2c5a]: https://github.com/loichyan/tmux-base16/commit/2eb2c5a5688b7e2cc18bb3139b163012bd260587
+[c9ca977]: https://github.com/loichyan/tmux-base16/commit/c9ca977158c26bb5fa265b7dd1424179f462d437
+[6daad03]: https://github.com/loichyan/tmux-base16/commit/6daad03c735539fb100108717e523559574a7c47
+[b8fd414]: https://github.com/loichyan/tmux-base16/commit/b8fd41403fb64d81b1f77a86954774e9faa2ff96
 
 ## [0.1.0] - 2025-08-30
 
