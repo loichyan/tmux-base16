@@ -104,13 +104,23 @@ may explicitly specify the desired background as the only argument.
 
 **Requirements**: Python >= **3.10**
 
-**Description**: A useful script to build palette from configurations. For the
+**Description**: A useful script to build palette from templates. For the
 structure of the configurations, see
 [palettes/gruvbox-material.ini](palettes/gruvbox-material.ini).
 
 ## 🔤 Variables
 
 This plugin also sets several variables that can be used in FORMATs.
+
+### `@base16-palettes`
+
+**Description**: Path to the [palettes directory](palettes) shipped with this
+plugin.
+
+### `@base16-templates`
+
+**Description**: Path to the [templates directory](templates) shipped with this
+plugin.
 
 ### `@baseXX`
 
