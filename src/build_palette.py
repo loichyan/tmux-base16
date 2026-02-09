@@ -239,11 +239,15 @@ def parse_args() -> argparse.Namespace:
         "-i",
         "--input",
         required=True,
+        action="append",
+        default=[],
         help="path to input template",
     )
     parser.add_argument(
         "-o",
         "--output",
+        action="append",
+        default=[],
         help="path to write output",
     )
     return parser.parse_args()
@@ -263,15 +267,21 @@ def main():
         config = parse_config(parser)
     config.current = getattr(config, args.current)
 
-    with open(args.input, "r") as f:
-        input = f.read()
+    if len(args.input) != len(args.output) and len(args.output) != 0:
+        raise ValueError("number of output paths must exactly match that of input")
 
-    output = render_template(config, input)
-    if args.output is not None:
-        with open(args.output, "w") as f:
+    outpath_iter = iter(args.output)
+    for inpath in args.input:
+        with open(inpath, "r") as f:
+            input = f.read()
+        output = render_template(config, input)
+        outpath = next(outpath_iter, None)
+
+        if outpath is None:
+            print(output)
+            continue
+        with open(outpath, "w") as f:
             f.write(output)
-    else:
-        print(output)
 
 
 if __name__ == "__main__":
