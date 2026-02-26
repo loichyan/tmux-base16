@@ -37,6 +37,8 @@ follows <https://www.conventionalcommits.org/en/v1.0.0/> to track changes.
 
 ## [Unreleased]
 
+## [0.2.1] - {{DATE}}
+
 ### Added
 
 - Support building configurations from templates ([#6])
@@ -82,4 +84,5 @@ details.
 
 [0.1.0]: https://github.com/loichyan/tmux-base16/tree/v0.1.0
 [0.2.0]: https://github.com/loichyan/tmux-base16/compare/v0.1.0..v0.2.0
-[Unreleased]: https://github.com/loichyan/tmux-base16/compare/v0.2.0..HEAD
+[0.2.1]: https://github.com/loichyan/tmux-base16/compare/v0.2.0..v0.2.1
+[Unreleased]: https://github.com/loichyan/tmux-base16/compare/v0.2.1..HEAD
