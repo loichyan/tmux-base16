@@ -37,6 +37,12 @@ follows <https://www.conventionalcommits.org/en/v1.0.0/> to track changes.
 
 ## [Unreleased]
 
+### Added
+
+- Support rendering templates in batch ([#{{PRNUM}}])
+
+[#{{PRNUM}}]: https://github.com/loichyan/tmux-base16/pull/{{PRNUM}}
+
 ## [0.2.1] - 2026-02-26
 
 ### Added
