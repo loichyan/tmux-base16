@@ -39,10 +39,10 @@ follows <https://www.conventionalcommits.org/en/v1.0.0/> to track changes.
 
 ### Added
 
-- Support building configurations from templates ([#{{PRNUM}}])
-- Add configuration templates for popular terminal apps ([#{{PRNUM}}])
+- Support building configurations from templates ([#6])
+- Add configuration templates for popular terminal apps ([#6])
 
-[#{{PRNUM}}]: https://github.com/loichyan/tmux-base16/pull/{{PRNUM}}
+[#6]: https://github.com/loichyan/tmux-base16/pull/6
 
 ## [0.2.0] - 2026-02-01
 
