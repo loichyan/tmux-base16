@@ -37,6 +37,13 @@ follows <https://www.conventionalcommits.org/en/v1.0.0/> to track changes.
 
 ## [Unreleased]
 
+### Added
+
+- Support building configurations from templates ([#{{PRNUM}}])
+- Add configuration templates for popular terminal apps ([#{{PRNUM}}])
+
+[#{{PRNUM}}]: https://github.com/loichyan/tmux-base16/pull/{{PRNUM}}
+
 ## [0.2.0] - 2026-02-01
 
 ### Added
