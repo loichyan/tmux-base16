@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Name:     tmux-base16
-# Version:  0.2.0
+# Version:  0.2.1
 # Authors:  Loi Chyan <loichyan@outlook.com>
 # License:  MIT OR Apache-2.0
 
