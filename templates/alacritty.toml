@@ -1,0 +1,50 @@
+# Run:
+#
+#     tmux run '#{@base16-build-palette} -i "#{@base16-templates}/alacritty.toml" -o ~/.config/alacritte/colors.toml'
+#
+# Then add these lines to `~/.config/alacritty/alacritty.toml`:
+#
+#     [general]
+#     import = ["colors.toml"]
+#
+%usepalette current
+# Scheme: ${scheme}
+# Author: ${author}
+[colors.primary]
+background = "#${base00}"
+foreground = "#${base05}"
+
+[colors.selection]
+text = "CellForeground"
+background = "#${base02}"
+
+[colors.cursor]
+text = "#${base00}"
+cursor = "#${base05}"
+
+[colors.vi_mode_cursor]
+text = "#${base00}"
+cursor = "#${base05}"
+
+[colors.normal]
+black = "#${base02}"
+red = "#${base08}"
+green = "#${base0B}"
+yellow = "#${base0A}"
+blue = "#${base0D}"
+magenta = "#${base0E}"
+cyan = "#${base0C}"
+white = "#${base05}"
+%endpalette current
+%usepalette current-light
+
+[colors.bright]
+black = "#${base03}"
+red = "#${base08}"
+green = "#${base0B}"
+yellow = "#${base0A}"
+blue = "#${base0D}"
+magenta = "#${base0E}"
+cyan = "#${base0C}"
+white = "#${base07}"
+%endpalette current-light
